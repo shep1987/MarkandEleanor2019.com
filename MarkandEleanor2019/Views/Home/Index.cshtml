@@ -4,47 +4,91 @@
 
     </nav>
     <h1 id="siteName">
-        Mark &amp; Eleanor
+        Arsen &amp; Shaun
     </h1>
     <div id="counter">
         &nbsp;
     </div>
+    <div id="hashTagTop">
+        #ArsenShaunWedding
+    </div>
     <div id="rsvpButton">
-        <a href="#">RSVP</a> <a href="~/calendar.ics" target="_blank">Add to Calendar</a>
+        <a href="#">RSVP</a><a href="~/calendar.ics" target="_blank">Add to Calendar</a>
     </div>
 </div>
-<div class="content">
+<div>
     <div id="map">
         <h2>Where</h2>
-        <div id="googleMap" style="height: 95vh;">
-
+        <div id="googleMap" style="height: 95vh;"></div>
+    </div>
+</div>
+<div id="weddingParty">
+    <h2>The Wedding Party</h2>
+    <div>
+        <h3>The Guys</h3>
+        <div class="group">
+            <div>
+                <h4>Hugh</h4>
+                <img src="~/images/wedding_party/hugh.jpg" />
+            </div>
+            <div>
+                <h4>James</h4>
+                <img src="~/images/wedding_party/james.jpg" />
+            </div>
+            <div>
+                <h4>Craig</h4>
+                <img src="~/images/wedding_party/craig.jpg" />
+            </div>
+        </div>
+        <h3>The Ladies</h3>
+        <div class="group">
+            <div>
+                <h4>Yasemin</h4>
+                <img src="~/images/wedding_party/yasemin.jpg" />
+            </div>
+            <div>
+                <h4>Pinar</h4>
+                <img src="~/images/wedding_party/pinar.jpg" />
+            </div>
+            <div>
+                <h4>Gülhan</h4>
+                <img src="~/images/wedding_party/gulhan.jpg" />
+            </div>
+            <div>
+                <h4>Emma</h4>
+                <img src="~/images/wedding_party/emma.jpg" />
+            </div>
+        </div>
+        <h3>The Pooch</h3>
+        <div class="group">
+            <div>
+                <h4>Pippa</h4>
+                <img src="~/images/wedding_party/pippa.jpg" />
+            </div>
         </div>
     </div>
 </div>
 <div id="hashTag">
-    <h2>#MarkAndEleanor2019</h2>
+    <h2>#ArsenShaunWedding</h2>
     <script src="//assets.juicer.io/embed.js" type="text/javascript"></script>
     <link href="//assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
-    <ul class="juicer-feed" data-feed-id="mark-eleanor-2019"></ul>
+    <ul class="juicer-feed" data-feed-id="arsen-shaun-2018"></ul>
 </div>
 
 @section Scripts
     {
     <script>
         $(document).ready(function () {
-            var weddingDate = moment.tz("2019-05-11 18:30", "Europe/Malta");
+            var weddingDate = moment.tz("2018-07-01 15:00", "Europe/London");
             $("#heroBanner #counter").countdown(weddingDate.toDate(), {
-                elapse: true,
-                //precision: 60000
+                elapse: true
             }).on('update.countdown', function (event) {
                 if (event.elapsed) {
                     var totalHours = event.offset.totalDays * 24 + event.offset.hours;
                     $(this).html("Married! " + event.strftime(totalHours + ' hr %M min %S sec ago!'));
                 }
                 else {
-                    //$(this).html(event.strftime('%-D day%!D'));
-                    var totalHours = event.offset.totalDays * 24 + event.offset.hours;
-                    $(this).html(event.strftime(totalHours.toLocaleString() + ' hr %M min %S sec'));
+                    $(this).html(event.strftime('%D days %H hr %M min %S sec'));
                 }
             }).countdown('start');
         });
@@ -52,227 +96,31 @@
         function initMap() {
             var locations = [
                 {
-                    position: new google.maps.LatLng(35.826891, 14.527366),
-                    markerUrl: "@Url.Content("~/images/map_markers/church-min.png")",
-                    info: '<h1>Birżebbuġa Parish Church</h1><h2>Ceremony</h2>Starts at 18:00.<br/><a href="https://www.google.com/maps/dir/Current+Location/Birżebbuġa Parish Church" target="_blank">How to get there</a>'
-                },
-                {
-                    position: new google.maps.LatLng(35.858748, 14.397613),
+                    position: new window.google.maps.LatLng(51.475149, -0.912922),
                     markerUrl: "@Url.Content("~/images/map_markers/cake-min.png")",
-                    info: '<h1>Chateau Buskett</h1><h2>Reception</h2>Starts at 20:00.<br/><a href="https://www.google.com/maps/dir/Current+Location/Chateau Buskett" target="_blank">How to get there</a>'
+                    info: '<h1>The Great House</h1>Starts at 15:00.<br/><a href="https://www.google.com/maps/dir/Current+Location/The+Great+House+at+Sonning,+Thames+Street,+Sonning,+Reading" target="_blank">How to get there</a>'
                 }
             ];
-            var church = { lat: 35.826891, lng: 14.527366 };
-            var map = new google.maps.Map(document.getElementById('googleMap'), {
-                zoom: 16,
-                streetViewControl: false,
-                mapTypeControl: false,
-                gestureHandling: 'none',
-                zoomControl: false,
-                disableDefaultUI: true,
-                styles: [
-                    {
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#f5f5f5"
-                            }
-                        ]
-                    },
-                    {
-                        "elementType": "labels.icon",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "elementType": "labels.text.fill",
-                        "stylers": [
-                            {
-                                "color": "#616161"
-                            }
-                        ]
-                    },
-                    {
-                        "elementType": "labels.text.stroke",
-                        "stylers": [
-                            {
-                                "color": "#f5f5f5"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "administrative.land_parcel",
-                        "elementType": "labels",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "administrative.land_parcel",
-                        "elementType": "labels.text.fill",
-                        "stylers": [
-                            {
-                                "color": "#bdbdbd"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#eeeeee"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "labels.text",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "labels.text.fill",
-                        "stylers": [
-                            {
-                                "color": "#757575"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "poi.park",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#e5e5e5"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "poi.park",
-                        "elementType": "labels.text.fill",
-                        "stylers": [
-                            {
-                                "color": "#9e9e9e"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#ffffff"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.arterial",
-                        "elementType": "labels.text.fill",
-                        "stylers": [
-                            {
-                                "color": "#757575"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#dadada"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.highway",
-                        "elementType": "labels.text.fill",
-                        "stylers": [
-                            {
-                                "color": "#616161"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.local",
-                        "elementType": "labels",
-                        "stylers": [
-                            {
-                                "visibility": "off"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "road.local",
-                        "elementType": "labels.text.fill",
-                        "stylers": [
-                            {
-                                "color": "#9e9e9e"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "transit.line",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#e5e5e5"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "transit.station",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#eeeeee"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "water",
-                        "elementType": "geometry",
-                        "stylers": [
-                            {
-                                "color": "#c9c9c9"
-                            }
-                        ]
-                    },
-                    {
-                        "featureType": "water",
-                        "elementType": "labels.text.fill",
-                        "stylers": [
-                            {
-                                "color": "#9e9e9e"
-                            }
-                        ]
-                    }
-                ]
+            var locationReception = { lat: 51.475149, lng: -0.912922 };
+            var map = new window.google.maps.Map(document.getElementById('googleMap'), {
+                zoom: 14,
+                center: locationReception
             });
 
-            var bounds = new google.maps.LatLngBounds();
+            var bounds = new window.google.maps.LatLngBounds();
 
             locations.forEach(location => {
-                var marker = new google.maps.Marker({
+                var marker = new window.google.maps.Marker({
                     position: location.position,
                     icon: {
                         url: location.markerUrl,
-                        scaledSize: new google.maps.Size(50, 50),
-                        anchor: new google.maps.Point(25, 25)
+                        scaledSize: new window.google.maps.Size(50, 50),
+                        anchor: new window.google.maps.Point(25, 25)
                     },
                     map: map
                 });
                 bounds.extend(marker.position);
-                var infoWindows = new google.maps.InfoWindow({
+                var infoWindows = new window.google.maps.InfoWindow({
                     content: location.info
                 });
                 infoWindows.open(map, marker);
@@ -284,7 +132,7 @@
             map.fitBounds(bounds);
             var width = $(window).width();
             $(window).on('resize', function () {
-                if ($(this).width() != width) {
+                if ($(this).width() !== width) {
                     width = $(this).width();
                     initMap();
                 }

@@ -35,20 +35,31 @@
         padding-top: 12vh;
     }
 
+    #heroBanner #hashTagTop {
+        text-align: center;
+        color: #ffffff;
+        font-family: 'Roboto Mono', monospace;
+        font-size: 3vw;
+        padding-top: 6vh;
+    }
+
     #heroBanner #rsvpButton {
-        width: min-content;
         margin: 0 auto;
-        padding-top: 23vh;
+        padding-top: 20vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
         #heroBanner #rsvpButton button, #heroBanner #rsvpButton a {
+            margin: 0 10px;
             cursor: pointer;
-            background: #E9818C;
+            background: #d1ffdd;
             padding: 15px 50px;
             border: none;
             text-transform: uppercase;
             display: inline-block;
-            color: #fff;
+            color: #000;
             border-radius: 20px;
             margin-top: 10px;
             -webkit-transition: all 0.5s ease 0s;
@@ -61,26 +72,43 @@
                 color: #333333;
             }
 
-#hashTag {
+#weddingParty .group {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: top;
 }
 
-    #hashTag .juicer-feed h1 {
-        display: none !important;
+    #weddingParty .group > div {
+        flex: 1 1 auto;
+        padding: 5px;
+        margin: 5px;
+        text-align: center;
+        max-width: 34%;
     }
 
-    #hashTag .j-stack > li.feed-item.juicer.image-post:not(.instagram):not(.facebook) {
-        display: none;
-    }
+img {
+    max-width: 100%;
+}
+
+#hashTag .juicer-feed h1 {
+    display: none !important;
+}
+
+#hashTag .j-stack > li.feed-item.juicer.image-post:not(.instagram):not(.facebook) {
+    display: none;
+}
 
 
 h2 {
     text-align: center;
     color: #ffffff;
-    background-color: #E9818C;
+    background-color: #ffd1dc;
     margin: 0;
     padding: 25px;
     font-size: 26pt;
     font-family: 'Roboto Slab', serif;
+    text-shadow: 3px 3px 0 black;
 }
 
     h2 a {
@@ -88,21 +116,40 @@ h2 {
         text-decoration: none;
     }
 
+h3 {
+    text-align: center;
+    color: #ffffff;
+    background-color: #d1ffdd;
+    margin: 0;
+    padding: 25px;
+    font-size: 26pt;
+    font-family: 'Roboto Slab', serif;
+    text-shadow: 3px 3px 0 black;
+}
+
+    h3 a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+
 .gm-style-iw {
     cursor: text;
 }
-.gm-style-iw h1, .gm-style-iw h2 {
-    padding: 0;
-    margin: 0;
-    text-align: left;
-    background-color: transparent;
-}
-.gm-style-iw h1 {
-    font-size: 16px;
-    color: #E9818C;
-}
 
-.gm-style-iw h2 {
-    font-size: 15px;
-    color: #747474;
-}
+    .gm-style-iw h1, .gm-style-iw h2 {
+        padding: 0;
+        margin: 0;
+        text-align: left;
+        background-color: transparent;
+    }
+
+    .gm-style-iw h1 {
+        font-size: 16px;
+        color: #ffd1dc;
+    }
+
+    .gm-style-iw h2 {
+        font-size: 15px;
+        color: #747474;
+    }
