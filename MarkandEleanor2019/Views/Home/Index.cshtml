@@ -1,4 +1,4 @@
-﻿<div id="heroBanner">
+﻿<div id="heroBanner" class="section">
     <header></header>
     <nav>
 
@@ -20,12 +20,13 @@
         <a href="~/calendar.ics" target="_blank">Add to Calendar</a>
         <a href="~/home/turkey">Turkish Wedding</a>
     </div>
+    <a href="#map">Next</a>
 </div>
-<div id="map">
+<div id="map" class="section">
     <h2>Venue</h2>
-    <div id="googleMap" style="height: 95vh;"></div>
+    <div id="googleMap"></div>
 </div>
-<div id="weddingParty">
+<div id="weddingParty" class="section">
     <h2>The Wedding Party</h2>
     <div>
         <h3>The Guys</h3>
@@ -71,7 +72,7 @@
         </div>
     </div>
 </div>
-<div id="accomodation">
+<div id="accomodation" class="section">
     <h2>Accomodation</h2>
     <p id="blurb">
         We will be having breakfast the morning after the wedding at the great house all are welcome to join
@@ -87,7 +88,7 @@
         </div>
     </div>
 </div>
-<div id="transport">
+<div id="transport" class="section">
     <h2>Transport</h2>
     <div class="group">
         <div class="transport-location">
@@ -100,8 +101,7 @@
         </div>
     </div>
 </div>
-
-<div id="hashTag">
+<div id="hashTag" class="section">
     <h2>#ArsenShaunWedding</h2>
     <script src="//assets.juicer.io/embed.js" type="text/javascript"></script>
     <link href="//assets.juicer.io/embed.css" media="all" rel="stylesheet" type="text/css" />
@@ -123,7 +123,12 @@
                 else {
                     $(this).html(event.strftime('%D days %H hr %M min %S sec'));
                 }
-            }).countdown('start');
+                }).countdown('start');
+
+                $.scrollify({
+                    section : ".section"
+                });
+
         });
 
         function initMap() {
