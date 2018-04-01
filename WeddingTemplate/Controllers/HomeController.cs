@@ -1,4 +1,4 @@
-﻿namespace ShaunAndArsen.Controllers
+﻿namespace WeddingTemplate.Controllers
 {
     using Microsoft.AspNetCore.Mvc;
 

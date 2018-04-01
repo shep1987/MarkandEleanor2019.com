@@ -1,4 +1,5 @@
-﻿@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
+﻿@using WeddingTemplate.Extensions
+@inject Microsoft.ApplicationInsights.AspNetCore.JavaScriptSnippet JavaScriptSnippet
 <!DOCTYPE html>
 <html>
 <head>
@@ -42,6 +43,7 @@
         <script src="~/lib/moment/moment.js"></script>
         <script src="~/lib/moment-timezone/builds/moment-timezone-with-data-2012-2022.min.js"></script>
         <script src="~/lib/jquery.countdown/dist/jquery.countdown.js"></script>
+        <script src="~/lib/Scrollify/jquery.scrollify.js"></script>
         <script src="~/js/site.js"></script>
     </environment>
     <environment names="Staging,Production">

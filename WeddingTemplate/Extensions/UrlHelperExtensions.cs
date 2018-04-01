@@ -1,9 +1,9 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using System;
-
-namespace MarkandEleanor2019.Extensions
+﻿namespace WeddingTemplate.Extensions
 {
+    using System;
+    using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Mvc;
+
     /// <summary>
     /// <see cref="IUrlHelper"/> extension methods.
     /// </summary>
