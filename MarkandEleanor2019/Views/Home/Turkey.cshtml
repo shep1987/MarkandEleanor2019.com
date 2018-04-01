@@ -7,7 +7,7 @@
         Arsen &amp; Shaun
     </h1>
     <div id="date">
-        1st July 2018
+        22nd September 2018
     </div>
     <div id="counter">
         &nbsp;
@@ -17,14 +17,15 @@
     </div>
     <div id="rsvpButton">
         <a href="#">RSVP</a>
-        <a href="~/calendar.ics" target="_blank">Add to Calendar</a>
-        <a href="~/home/turkey">Turkish Wedding</a>
+        <a href="~/calendar-turkey.ics" target="_blank">Add to Calendar</a>
+        <a href="~/">English Wedding</a>
     </div>
 </div>
 <div id="map">
     <h2>Venue</h2>
     <div id="googleMap" style="height: 95vh;"></div>
 </div>
+
 <div id="weddingParty">
     <h2>The Wedding Party</h2>
     <div>
@@ -62,29 +63,19 @@
                 <img src="~/images/wedding_party/emma.jpg" />
             </div>
         </div>
-        <h3>The Pooch</h3>
-        <div class="group">
-            <div>
-                <h4>Pippa</h4>
-                <img src="~/images/wedding_party/pippa.jpg" />
-            </div>
-        </div>
     </div>
 </div>
 <div id="accomodation">
     <h2>Accomodation</h2>
     <p id="blurb">
-        We will be having breakfast the morning after the wedding at the great house all are welcome to join
+        You will need to stay in greece...
     </p>
     <div class="group">
         <div class="location">
-            <h4><a href="http://www.greathouseatsonning.co.uk/room-types">The Great House</a></h4>
-            <p>We have secured a room rate of £90 for a Relaxed or Cosy room or £110 for a Deluxe room</p>
+            <h4><a href="http://google.com">The Hotel</a></h4>
+            <p>Staying in the hotel will be ???</p>
         </div>
-        <div class="location">
-            <h4><a href="http://www.bullinnsonning.co.uk/">The Bull inn</a></h4>
-            <p>A short walk accross the road</p>
-        </div>
+
     </div>
 </div>
 <div id="transport">
@@ -92,11 +83,15 @@
     <div class="group">
         <div class="transport-location">
             <h4>By car</h4>
-            <p>The postcode is RG4 6UT there is plenty of parking on site, as you head into the venue keep to the left and park in the lower car park.</p>
+            <p>????</p>
         </div>
         <div class="transport-location">
-            <h4>Public Transport</h4>
-            <p>Reading is the nearest mainline Station 10 minutes away by car. A taxi can be arranged to pick you up at the hotel. Taxis are outside Reading Station. The journey each way is around £10.00.</p>
+            <h4>Taxi</h4>
+            <p>Somethign something dark side</p>
+        </div>
+        <div class="transport-location">
+            <h4>By Air</h4>
+            <p>You will fly into Izmir Airport</p>
         </div>
     </div>
 </div>
@@ -112,7 +107,7 @@
     {
     <script>
         $(document).ready(function () {
-            var weddingDate = moment.tz("2018-07-01 15:00", "Europe/London");
+            var weddingDate = moment.tz("2018-09-22 15:00", "Europe/London");
             $("#heroBanner #counter").countdown(weddingDate.toDate(), {
                 elapse: true
             }).on('update.countdown', function (event) {
@@ -127,14 +122,14 @@
         });
 
         function initMap() {
-            var locationReception = { lat: 51.475459, lng: -0.912432 };
+            var locationReception = { lat: 38.423734, lng: 27.142826 };
             var position = new window.google.maps.LatLng(locationReception.lat, locationReception.lng);
 
             var locations = [
                 {
                     position: position,
                     markerUrl: "@Url.Content("~/images/map_markers/church-min.png")",
-                    info: '<h1>The Great House</h1>Starts at 15:00.<br/><a href="https://www.google.com/maps/dir/Current+Location/The+Great+House+at+Sonning,+Thames+Street,+Sonning,+Reading" target="_blank">How to get there</a>'
+                    info: '<h1>The Hotel</h1>Starts at ??.??.<br/><a href="https://www.google.com/maps/dir/Current+Location/Izmir+Adnan+Menderes+Airport" target="_blank">How to get there</a>'
                 }
             ];
             var mapOptions = {
