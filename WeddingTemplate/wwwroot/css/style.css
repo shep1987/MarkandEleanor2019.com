@@ -133,19 +133,34 @@
 }
 
 #weddingParty .group {
+    display: flex;
+    flex-direction: row;
+    flex-basis: 100vw;
+    flex-direction: row;
+    height: 45vh;
 }
 
     #weddingParty .group .header {
         background-color: #d1ffdd;
-        width: 200px;
+        writing-mode: tb-rl;
+        padding: 0 5px;
     }
 
     #weddingParty .group .people {
-        flex: auto;
+        display: flex;
+        flex-direction: row;
+        flex-basis: 100vw;
+        text-align: center;
+        
     }
+
+        #weddingParty .group .people h3 {
+            margin: 0 2px;
+        }
 
         #weddingParty .group .people > div {
             flex-direction: row;
+            padding: 0 5px
         }
 
 #hashTag .juicer-feed h1 {
@@ -180,22 +195,6 @@ h2 {
 }
 
     h2 a {
-        color: #ffffff;
-        text-decoration: none;
-    }
-
-h3 {
-    text-align: center;
-    color: #ffffff;
-    background-color: #d1ffdd;
-    margin: 0;
-    padding: 25px;
-    font-size: 26pt;
-    font-family: 'Roboto Slab', serif;
-    text-shadow: 3px 3px 0 black;
-}
-
-    h3 a {
         color: #ffffff;
         text-decoration: none;
     }

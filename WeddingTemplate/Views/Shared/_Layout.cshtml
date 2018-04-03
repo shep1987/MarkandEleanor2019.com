@@ -47,7 +47,7 @@
         <script src="~/js/site.js"></script>
     </environment>
     <environment names="Staging,Production">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+       <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"
                 integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
                 crossorigin="anonymous"
                 asp-fallback-src="~/lib/jQuery/dist/jquery.min.js"
@@ -71,6 +71,7 @@
                 asp-fallback-src="~/lib/jquery.countdown/dist/jquery.countdown.min.js"
                 asp-fallback-test="window.jQuery().countdown">
         </script>
+        <script src="~/lib/Scrollify/jquery.scrollify.js"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
     @RenderSection("Scripts", required: false)
